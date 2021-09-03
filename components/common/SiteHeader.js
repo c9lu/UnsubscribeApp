@@ -13,7 +13,7 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
   if (!header) {
     return (
       <header className="relative p-8 text-center">
-        <p className="text-gray-400 font-bold">No Header Available</p>
+     
       </header>
     );
   }

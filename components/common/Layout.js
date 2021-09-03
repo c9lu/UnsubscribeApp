@@ -40,12 +40,6 @@ function Layout(props) {
 
   return (
     <>
-      <SEO
-        title={sitemapNode?.title}
-        description={page.seo.metaDescription}
-        keywords={page.seo.metaKeywords}
-        metaHTML={page.seo.metaHTML}
-      />
       <div id="site-wrapper">
         {isPreview && <LoadingWidget message="Loading Preview Mode" />}
         {!isPreview && (

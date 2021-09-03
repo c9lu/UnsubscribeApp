@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import truncate from "truncate-html";
 import { AgilityImage } from "@agility/nextjs"
-
+ 
 const FeaturedPost = ({ module }) => {
   // get module fields
   const { fields } = module;
