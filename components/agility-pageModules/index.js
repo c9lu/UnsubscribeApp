@@ -5,6 +5,7 @@ import RichTextArea from "./RichTextArea";
 import Heading from "./Heading";
 import TextBlockWithImage from "./TextBlockWithImage";
 import UnsubscribeFrontPage from "./UnsubscribeFrontPage";
+import UnsubscribeCompletePage from "./UnsubscribeCompletePage";
 import Logos from "./Logos";
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -17,7 +18,8 @@ const allModules = [
   //{ name: "PostsListing", module: PostsListing },
   //{ name: "PostDetails", module: PostDetails },
   { name: "RichTextArea", module: RichTextArea },
-  { name: "UnsubscribeFrontPage", module:UnsubscribeFrontPage}
+  { name: "UnsubscribeFrontPage", module:UnsubscribeFrontPage},
+  { name: "UnsubscribeCompletePage", module:UnsubscribeCompletePage}
 ];
 
 export const getModule = (moduleName) => {

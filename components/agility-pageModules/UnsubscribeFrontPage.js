@@ -7,7 +7,7 @@ import React,{useState} from 'react';
 const UnsubscribeFrontPage = ({module})=>{
 
     const router = useRouter();
-    let {language, email} = router.query;
+    let {language, email, orgid} = router.query;
     const { fields } = module;
     //this.state={email:_email};
     const[_email,setEmail]=useState(email);
@@ -20,8 +20,8 @@ const UnsubscribeFrontPage = ({module})=>{
         language = 'EN'
     }
     const Unsubscribe=()=>{
-      alert(_email);
-     
+      //alert(_email);
+       location.href='/unsubscribecomplete?orgid='+orgid+'&language='+ language;
     }
    /* onChangeHandler=(event)=>{
 
@@ -38,7 +38,7 @@ const UnsubscribeFrontPage = ({module})=>{
               <p>
                 <strong>{_email}</strong>
               </p>
-              <p className={styles.msg1}>{fields.introMessage2EN}
+              <p className={styles.msg1}>{language=='EN'?fields.introMessage2EN:fields.introMessage2FR}
                 <input type="email" size="38" onChange={e=>setEmail(e.target.value)}/>
               </p>
 
