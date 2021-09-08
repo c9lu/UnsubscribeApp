@@ -9,42 +9,36 @@ const UnsubscribeFrontPage = ({module})=>{
     const router = useRouter();
     let {language, email, orgid} = router.query;
     const { fields } = module;
-    //this.state={email:_email};
     const[_email,setEmail]=useState(email);
-    //  console.log(Object.keys(fields.oxfordLogo));
     
-    //let language = GetQueryStringValue('language');
     if(language){
         language = language.toUpperCase();
     }else{
         language = 'EN'
     }
-    const Unsubscribe=()=>{
-      //alert(_email);
+    const Unsubscribe=()=>{      
        location.href='/unsubscribecomplete?orgid='+orgid+'&language='+ language;
     }
-   /* onChangeHandler=(event)=>{
-
-      let value= event.target.value;
-      setEmail(value);
-    }*/
-    // get featured post
-   // const { featuredPost } = fields;
+  
     return(
       <div className={styles.container}>
              
             <div>
               <h1 className={styles.msg1}><b>{language=='EN'?fields.introMessage1EN:fields.introMessage1FR}</b></h1>
+             <br/>
               <p>
-                <strong>{_email}</strong>
+               {email?  <strong>{_email}</strong>:null}
               </p>
-              <p className={styles.msg1}>{language=='EN'?fields.introMessage2EN:fields.introMessage2FR}
-                <input type="email" size="38" onChange={e=>setEmail(e.target.value)}/>
-              </p>
-
+              {email==null || email===undefined?
+                <p>{language=='EN'?fields.introMessage2EN:fields.introMessage2FR} 
+               
+                <span>&nbsp;&nbsp;</span>            
+                  <input type="email" size="38"  className={styles.emailTextbox} onChange={e=>setEmail(e.target.value)}/>
+                </p>:null}
+            </div>
               <button className={styles.colorButton} onClick={()=>{Unsubscribe()}}>{language=='EN'?'Unsubscribe':'Se désabonner'}</button>
             </div>
-      </div>
+  
     );
 
 

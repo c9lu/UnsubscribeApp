@@ -50,3 +50,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .emailTextbox{
+    font-size: 20px;
+    letter-spacing: .1rem;
+    border-style: solid;
+    border-width: 1px;
+
+  }
